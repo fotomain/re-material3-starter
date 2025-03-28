@@ -1,8 +1,13 @@
-# Sample React App as an Embeddable Widget
+# Sample React AppForm as an Embeddable Widget
 
-# Material Design
+# Go WP ================
 npm i material-components-web
+link to index.html
+npm i lit
 
+# Material Design ================
+npm i material-components-web
+npm i lit
 
 rm -rf .git
 git init
@@ -12,8 +17,7 @@ git commit -m "first commit"
 git branch -M main
 
 git push -u origin main
-
-
+================
 
 This is a widget used for displaying a stock symbol, name, price and intraday variation in an embeddable div.
 
@@ -21,11 +25,11 @@ Here is an example of the 3 widget items in the same page :
 
 ![Image of Finance Widget](https://github.com/nicoraynaud/react-widget/blob/master/sample.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React AppForm](https://github.com/facebook/create-react-app).
 
 ## Purpose and disclaimer
 
-This project is a demo aiming at showing how one can build an embeddable React widget from a React App.
+This project is a demo aiming at showing how one can build an embeddable React widget from a React AppForm.
 
 The full blog post explaining how it works is available [here](https://tekinico.medium.com/build-a-react-embeddable-widget-c46b7f7999d8).
 

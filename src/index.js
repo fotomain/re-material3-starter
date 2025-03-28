@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './index.css';
-import App from './App';
+import AppForm from './AppForm';
 import {createRoot} from "react-dom/client";
 
 // Setup Axios once here
@@ -23,7 +23,7 @@ if(container){
     widgetDivs.forEach((div,ii) => {
         root.render(
             <React.StrictMode>
-                <App symbol={div.dataset.symbol}/>
+                <AppForm symbol={div.dataset.symbol}/>
                 {/*()=>{return( <div key={ii}>{div}</div> )}*/}
             </React.StrictMode>
 
@@ -33,11 +33,11 @@ if(container){
 }
 
 
-// Inject our React App into each class
+// Inject our React AppForm into each class
 // widgetDivs.forEach(div => {
 //     ReactDOM.render(
 //       <React.StrictMode>
-//         <App symbol={div.dataset.symbol}/>
+//         <AppForm symbol={div.dataset.symbol}/>
 //       </React.StrictMode>,
 //         div
 //     );
