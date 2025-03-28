@@ -26,7 +26,7 @@ const AppForm = (props) => {
 
     useEffect(() => {
 
-        let el:any=document.querySelector('.username')
+        let el=document.querySelector('.username')
         if(null!==el) {
             const username = new MDCTextField(el);
         }
@@ -39,7 +39,7 @@ const AppForm = (props) => {
             const username = new MDCTextField(el);
         }
 
-        let el2:any=null
+        let el2=null
         el2=document.querySelector('.cancel')
         if(null!==el) {
             new MDCRipple(el2);
