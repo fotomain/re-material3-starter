@@ -23,7 +23,6 @@ const AppForm = (props) => {
         isFocused: true
     })
 
-
     useEffect(() => {
 
         let el=document.querySelector('.username')
