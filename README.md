@@ -3,6 +3,7 @@
 # Material Design
 npm i material-components-web
 
+
 rm -rf .git
 git init
 git remote add origin https://github.com/fotomain/re-material3-starter.git
