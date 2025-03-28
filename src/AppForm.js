@@ -9,6 +9,7 @@ import React, {useEffect, useState} from 'react';
 // import {MDCRipple} from 'material-components-web/dist/material-components-web'
 import {MDCRipple} from '@material/ripple';
 import {MDCTextField} from '@material/textfield';
+import {createRoot} from 'react-dom/client';
 
 
 const AppForm = (props) => {
@@ -22,6 +23,7 @@ const AppForm = (props) => {
     const [state, setState] = useState({
         isFocused: true
     })
+
 
     useEffect(() => {
 
@@ -82,8 +84,8 @@ const AppForm = (props) => {
             </label>
 
 
-            <div style={{display: "flex", flexDirection: "row", alignItems: "flex-end"}}>
-                <label className="mdc-text-field mdc-text-field--outlined pincode">
+            {/*<div style={{display: "flex", flexDirection: "row", alignItems: "flex-end"}}>*/}
+            <label className="mdc-text-field mdc-text-field--outlined pincode">
               <span className="mdc-notched-outline">
                 <span className="mdc-notched-outline__leading"></span>
                 <span className="mdc-notched-outline__notch" style={{borderLeft: "none", borderRight: "none"}}>
@@ -91,13 +93,13 @@ const AppForm = (props) => {
                 </span>
                 <span className="mdc-notched-outline__trailing"></span>
               </span>
-                    <input type="text" className="mdc-text-field__input"
-                           aria-labelledby="my-label-id"
-                           aria-controls="my-helper-id"
-                           aria-describedby="my-helper-id"
-                    />
-                </label>
-            </div>
+                <input type="text" className="mdc-text-field__input"
+                       aria-labelledby="my-label-id"
+                       aria-controls="my-helper-id"
+                       aria-describedby="my-helper-id"
+                />
+            </label>
+            {/*</div>*/}
 
 
             <div className="button-container">
@@ -123,3 +125,24 @@ const AppForm = (props) => {
 }
 
 export default AppForm;
+
+
+
+export const RunDivPlugin = (props) => {
+
+    const rootElement = document.getElementById("root2");
+    if (rootElement) {
+        createRoot(rootElement).render(
+            <React.StrictMode>
+                <div style={{backgroundColor: "blue"}}>RunDiv result!!!</div>
+                <div style={{backgroundColor: "blue"}}>{JSON.stringify(props)}</div>
+            </React.StrictMode>,
+        );
+    }
+
+}
+
+if (typeof window !== 'undefined') {
+    window.RunDivPlugin = RunDivPlugin;
+}
+
