@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import {MDCTextField} from "@material/textfield";
 import uuid4_custom from "./lib/uuid4_custom";
 
+import '../src/lib/css1/light.css'
+
 const InputOutlinedM3 = (props:any) => {
 
     const {type, labelText, classGUID,...other} = props;

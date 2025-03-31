@@ -1,9 +1,17 @@
 # Sample React UserPasswordPincodeForm as an Embeddable Widget
 
+pkill node
+npm cache clean --force
+
 # Go WP ================
 npm i material-components-web
 link to index.html
 npm i lit
+
+# NOT USED
+
+    "@mui/material": "^6.4.1",
+    "@mui/styles": "^6.4.4",
 
 # Material Design ================
 npm i material-components-web

@@ -6,7 +6,11 @@
 
 // import {MDCRipple} from 'material-components-web/dist/material-components-web'
 
+import './index.css';
+
 import React,{useEffect, useState} from "react";
+
+//import {ThemeProvider} from '@material/theme';
 
 import {MDCRipple} from '@material/ripple';
 import {MDCTextField} from '@material/textfield';
@@ -65,11 +69,14 @@ const CalculateMassagesForm = (props:any) => {
 
     }, []);
 
+    const colorPrimary:any= {"--mdc-theme-primary": "rgb(0 73 92)"}
+
     return (
         // https://react.dev/reference/react-dom/components/form
         <form
             name={'calculator'}
             style={{
+            ...colorPrimary,
             gap: "32px",
             marginTop: "42px",
             display: "flex",
@@ -96,7 +103,9 @@ const CalculateMassagesForm = (props:any) => {
             <label className="mdc-text-field mdc-text-field--outlined phone">
                 <span className="mdc-text-field__ripple"></span>
                 <input type="text" className="mdc-text-field__input" aria-labelledby="username-label" name="username"
-                       required/>
+                       required
+                       // style={{backgroundColor:'var(--md-sys-color-primary)'}}
+                />
                 <span className="mdc-floating-label" id="username-label">Phone number</span>
                 <span className="mdc-line-ripple"></span>
             </label>
