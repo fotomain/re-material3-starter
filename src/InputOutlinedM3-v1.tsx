@@ -41,22 +41,22 @@ const InputOutlinedM3 = (props:any) => {
     }, []);
 
     useEffect(() => {
+        setState((prevState:any)=>{return({ ...prevState,
+            value:props.value,
+            labelText:labelText,
+        })})
 
-        setTimeout(()=>{
-            setState((prevState:any)=>{return({ ...prevState,
-                value:props.value,
-                labelText:labelText,
-            })})
-
-        },1000)
-
+        const el=document.querySelector("."+classText)
+        if(null!==el) {
+            const username = new MDCTextField(el);
+        }
 
     }, [props.value,props.labelText]);
 
     console.log("state.labelText1",state.labelText)
 
-    return (
-        <label className={"mdc-text-field mdc-text-field--outlined " + classText + " "}>
+  return (
+      <label className={"mdc-text-field mdc-text-field--outlined " + classText + " "}>
                   <span className="mdc-notched-outline">
                     <span className="mdc-notched-outline__leading"></span>
                     <span className="mdc-notched-outline__notch" style={{borderLeft: "none", borderRight: "none"}}>
@@ -72,16 +72,16 @@ const InputOutlinedM3 = (props:any) => {
                     <span className="mdc-notched-outline__trailing"></span>
                   </span>
 
-            <input type={inputTypeText}
-                   className="mdc-text-field__input"
-                   aria-labelledby="my-label-id"
-                   {...other}
-                   value={state.value}
-            />
+          <input type={inputTypeText}
+                 className="mdc-text-field__input"
+                 aria-labelledby="my-label-id"
+                 {...other}
+                  value={state.value}
+          />
 
-        </label>
+      </label>
 
-    )
+  )
 }
 
 export default InputOutlinedM3
