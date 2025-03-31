@@ -4,19 +4,20 @@
 // npm i material-components-web
 // npm run build
 
-import React, {useEffect, useState} from 'react';
-
 // import {MDCRipple} from 'material-components-web/dist/material-components-web'
+
+import React,{useEffect, useState} from "react";
+
 import {MDCRipple} from '@material/ripple';
 import {MDCTextField} from '@material/textfield';
 import {createRoot} from 'react-dom/client';
 
 
-const AppForm = (props) => {
+const AppForm = (props:any) => {
 
     console.log("props", props);
 
-    const onChangeForm = (params) => {
+    const onChangeForm = (params:any) => {
         console.log("params", params);
     }
 
@@ -27,7 +28,7 @@ const AppForm = (props) => {
 
     useEffect(() => {
 
-        let el=document.querySelector('.username')
+        let el:any=document.querySelector('.username')
         if(null!==el) {
             const username = new MDCTextField(el);
         }
@@ -40,14 +41,14 @@ const AppForm = (props) => {
             const username = new MDCTextField(el);
         }
 
-        let el2=null
-        el2=document.querySelector('.cancel')
+
+        el=document.querySelector('.cancel')
         if(null!==el) {
-            new MDCRipple(el2);
+            new MDCRipple(el);
         }
-        el2=document.querySelector('.next')
+        el=document.querySelector('.next')
         if(null!==el) {
-            new MDCRipple(el2);
+            new MDCRipple(el);
         }
 
     }, []);
@@ -89,14 +90,16 @@ const AppForm = (props) => {
               <span className="mdc-notched-outline">
                 <span className="mdc-notched-outline__leading"></span>
                 <span className="mdc-notched-outline__notch" style={{borderLeft: "none", borderRight: "none"}}>
-                  <span className="mdc-floating-label" id="my-label-id">Pincode</span>
+                  <span className="mdc-floating-label" id="my-label-id"
+                        style={{paddingBottom:"4px"}} // fix for WP display
+                  >
+                      Pincode
+                  </span>
                 </span>
                 <span className="mdc-notched-outline__trailing"></span>
               </span>
                 <input type="text" className="mdc-text-field__input"
                        aria-labelledby="my-label-id"
-                       aria-controls="my-helper-id"
-                       aria-describedby="my-helper-id"
                 />
             </label>
             {/*</div>*/}
@@ -126,9 +129,7 @@ const AppForm = (props) => {
 
 export default AppForm;
 
-
-
-export const RunDivPlugin = (props) => {
+export const RunDivPlugin = (props:any) => {
 
     const rootElement = document.getElementById("root2");
     if (rootElement) {
@@ -140,6 +141,12 @@ export const RunDivPlugin = (props) => {
         );
     }
 
+}
+
+declare global {
+    interface Window {
+        RunDivPlugin:any;
+    }
 }
 
 if (typeof window !== 'undefined') {

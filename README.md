@@ -60,7 +60,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm build:widget`
 
 Builds the app as an embeddable widget. Creates two files :
-- index.js
+- index.tsx
 - index.css
 
 That can be included in any web page to trigger the load of the widget.
@@ -89,6 +89,6 @@ Here follows an example integration :
 </div>
 <!-- /!\ Only add these two tags once per page -->
 <link href="https://cdn.somewhere/react-widget/index.css" rel="stylesheet"/>
-<script src="https://cdn.somewhere/react-widget/index.js"></script>
+<script src="https://cdn.somewhere/react-widget/index.tsx"></script>
 ...
 ```
