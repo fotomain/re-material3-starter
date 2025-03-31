@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import AppForm from './AppForm';
+import UserPasswordPincodeForm from './UserPasswordPincodeForm';
 
 test('renders learn react link', () => {
-  render(<AppForm />);
+  render(<UserPasswordPincodeForm />);
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });

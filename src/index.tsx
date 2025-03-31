@@ -1,9 +1,12 @@
 
 
 import './index.css';
-import AppForm from './AppForm';
+import UserPasswordPincodeForm from './UserPasswordPincodeForm';
 import {createRoot} from "react-dom/client";
 import React from 'react';
+import CalculateMassagesForm from "./CalculateMassagesForm";
+import initMaterial3 from "./lib/InitMaterial3";
+import InitMaterial3 from "./lib/InitMaterial3";
 
 
 // Find all widget divs
@@ -17,7 +20,9 @@ if(container){
     widgetDivs.forEach((div:any,ii:number) => {
         root.render(
             <React.StrictMode>
-                <AppForm symbol={div.dataset.symbol}/>
+                <InitMaterial3/>
+                <CalculateMassagesForm symbol={div.dataset.symbol}/>
+                {/*<UserPasswordPincodeForm symbol={div.dataset.symbol}/>*/}
                 {/*()=>{return( <div key={ii}>{div}</div> )}*/}
             </React.StrictMode>
 
@@ -27,11 +32,11 @@ if(container){
 }
 
 
-// Inject our React AppForm into each class
+// Inject our React UserPasswordPincodeForm into each class
 // widgetDivs.forEach(div => {
 //     ReactDOM.render(
 //       <React.StrictMode>
-//         <AppForm symbol={div.dataset.symbol}/>
+//         <UserPasswordPincodeForm symbol={div.dataset.symbol}/>
 //       </React.StrictMode>,
 //         div
 //     );

@@ -13,7 +13,7 @@ import {MDCTextField} from '@material/textfield';
 import {createRoot} from 'react-dom/client';
 
 
-const AppForm = (props:any) => {
+const UserPasswordPincodeForm = (props:any) => {
 
     console.log("props", props);
 
@@ -127,7 +127,7 @@ const AppForm = (props:any) => {
     );
 }
 
-export default AppForm;
+export default UserPasswordPincodeForm;
 
 export const RunDivPlugin = (props:any) => {
 
