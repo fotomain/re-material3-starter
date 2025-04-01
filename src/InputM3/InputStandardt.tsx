@@ -32,7 +32,9 @@ const InputStandardt = (props:any) => {
         }
     }, []);
 
-    return <label className={"mdc-text-field mdc-text-field--outlined "+classText}>
+    return <label className={"mdc-text-field mdc-text-field--outlined "+classText}
+                  style={{width: "100%"}}
+    >
           <span className="mdc-text-field__ripple"></span>
           <input type={inputTypeText} className="mdc-text-field__input" aria-labelledby="username-label"
                  name="username"

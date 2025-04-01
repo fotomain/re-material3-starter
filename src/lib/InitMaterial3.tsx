@@ -16,6 +16,8 @@ for (let i = 0; i < colorSetArray.length; i++) {
     colorSet[el[0]]=el[1]
 }
 
+console.log("colorSet1",colorSet)
+
 const InitMaterial3 = (props:any) => {
 
 

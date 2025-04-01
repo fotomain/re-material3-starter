@@ -4,9 +4,9 @@ import './index.css';
 
 import {createRoot} from "react-dom/client";
 import React from 'react';
-import CalculateMassagesForm from "./CalculateMassagesForm";
 
-import InitMaterial3 from "./lib/InitMaterial3";
+
+import InitMaterial3, {colorSet} from "./lib/InitMaterial3";
 import CardM3 from "./CardM3/CardM3";
 
 
@@ -21,14 +21,26 @@ if(container){
     widgetDivs.forEach((div:any,ii:number) => {
         root.render(
             <React.StrictMode>
+                <div
+                    style={{
+                        ...colorSet,
+                        // ...colorButtonFontSize,
+                        backgroundColor:"white",
+                    }}
+                >
                 <InitMaterial3/>
                 <div
-                    style={{ justifyContent:'center',display: "flex", flexDirection: "row", alignItems: "center"}}
+                    style={{
+                        // backgroundColor:"red",
+                        backgroundColor:"var(--mdc-theme-primary-container)",
+                        justifyContent:'center',display: "flex", flexDirection: "row", alignItems: "center"
+                    }}
                 >
                     <CardM3 />
                 </div>
 
-                {/*<CalculateMassagesForm symbol={div.dataset.symbol}/>*/}
+                </div>
+
                 {/*<UserPasswordPincodeForm symbol={div.dataset.symbol}/>*/}
                 {/*()=>{return( <div key={ii}>{div}</div> )}*/}
             </React.StrictMode>
