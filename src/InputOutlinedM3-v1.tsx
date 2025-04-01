@@ -15,8 +15,6 @@ const InputOutlinedM3 = (props:any) => {
         classText = classGUID;
     }
 
-    console.log("classText1",classText)
-
     let inputTypeText=''
     if(type) {
         inputTypeText = type

@@ -8,7 +8,12 @@ import {MDCFloatingLabel} from '@material/floating-label';
 
 const InputOutlinedM3 = (props:any) => {
 
-    const {type, labelText, classGUID,...other} = props;
+    const {refInput,min,max,type, labelText, classGUID,...other} = props;
+
+    let minX="-99999"
+    if(min) minX=min
+    let maxX="99999"
+    if(max) maxX=max
 
     let classText=''
     if(!classGUID) {
@@ -17,7 +22,6 @@ const InputOutlinedM3 = (props:any) => {
         classText = classGUID;
     }
 
-    console.log("classText1",classText)
 
     let inputTypeText=''
     if(type) {
@@ -65,9 +69,12 @@ const InputOutlinedM3 = (props:any) => {
                   </span>
 
             <input type={inputTypeText}
+                   min={minX}
+                   max={maxX}
                    className="mdc-text-field__input"
                    aria-labelledby="my-label-id"
                    {...other}
+                    ref={refInput}
             />
             {/*<div>{classText}</div>*/}
         </label>
