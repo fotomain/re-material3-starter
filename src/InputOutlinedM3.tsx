@@ -4,6 +4,8 @@ import uuid4_custom from "./lib/uuid4_custom";
 
 import '../src/lib/css1/light.css'
 
+import {MDCFloatingLabel} from '@material/floating-label';
+
 const InputOutlinedM3 = (props:any) => {
 
     const {type, labelText, classGUID,...other} = props;
@@ -27,40 +29,30 @@ const InputOutlinedM3 = (props:any) => {
     // console.log("inputTypeText1",inputTypeText)
 
     const [state, setState] = useState({
-        value:props.value,
         labelText:props.labelText,
     });
 
     useEffect(() => {
 
-        const el=document.querySelector("."+classText)
-        if(null!==el) {
-            const username = new MDCTextField(el);
+        const el1:any=document.querySelector("."+classText)
+        if(null!==el1) {
+            setTimeout(()=>{
+                const inputEl = new MDCTextField(el1);
+                //!!! chrome => no label appear without timeout
+            },200)
         }
 
     }, []);
 
-    useEffect(() => {
-
-        setTimeout(()=>{
-            setState((prevState:any)=>{return({ ...prevState,
-                value:props.value,
-                labelText:labelText,
-            })})
-
-        },1000)
-
-
-    }, [props.value,props.labelText]);
-
-    console.log("state.labelText1",state.labelText)
+    // {JSON.stringify(state.showLabelAbove)}
 
     return (
         <label className={"mdc-text-field mdc-text-field--outlined " + classText + " "}>
                   <span className="mdc-notched-outline">
                     <span className="mdc-notched-outline__leading"></span>
                     <span className="mdc-notched-outline__notch" style={{borderLeft: "none", borderRight: "none"}}>
-                      <span className="mdc-floating-label" id="my-label-id"
+                      <span className={"mdc-floating-label "}
+                            id="my-label-id"
                             style={{
                                 paddingBottom: "4px",
                                 color:'var(--mdc-theme-primary)'
@@ -76,11 +68,9 @@ const InputOutlinedM3 = (props:any) => {
                    className="mdc-text-field__input"
                    aria-labelledby="my-label-id"
                    {...other}
-                   value={state.value}
             />
-
+            {/*<div>{classText}</div>*/}
         </label>
-
     )
 }
 

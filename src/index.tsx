@@ -1,11 +1,11 @@
 
 
 import './index.css';
-import UserPasswordPincodeForm from './UserPasswordPincodeForm';
+
 import {createRoot} from "react-dom/client";
 import React from 'react';
 import CalculateMassagesForm from "./CalculateMassagesForm";
-import initMaterial3 from "./lib/InitMaterial3";
+
 import InitMaterial3 from "./lib/InitMaterial3";
 
 

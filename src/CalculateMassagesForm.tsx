@@ -134,11 +134,6 @@ const CalculateMassagesForm = (props:any) => {
 
     }, [state.weeks,state.perWeek]);
 
-    let el=document.querySelector('.pincode')
-    if(null!==el) {
-        const pincode = new MDCTextField(el);
-    }
-
 
     return (
         <div
@@ -166,24 +161,6 @@ const CalculateMassagesForm = (props:any) => {
                 }}
             >
 
-                <div style={{display: "flex", flexDirection: "row", alignItems: "flex-end"}}>
-                    <label className="mdc-text-field mdc-text-field--outlined pincode">
-              <span className="mdc-notched-outline">
-                <span className="mdc-notched-outline__leading"></span>
-                <span className="mdc-notched-outline__notch" style={{borderLeft: "none", borderRight: "none"}}>
-                  <span className="mdc-floating-label" id="my-label-id">Pincode</span>
-                </span>
-                <span className="mdc-notched-outline__trailing"></span>
-              </span>
-                        <input type="text" className="mdc-text-field__input"
-                               aria-labelledby="my-label-id"
-                               aria-controls="my-helper-id"
-                               aria-describedby="my-helper-id"
-                               value={10}
-                        />
-                    </label>
-                </div>
-
                     <label className="mdc-text-field mdc-text-field--outlined username">
                         <span className="mdc-text-field__ripple"></span>
                         <input type="text" className="mdc-text-field__input" aria-labelledby="username-label"
@@ -208,64 +185,71 @@ const CalculateMassagesForm = (props:any) => {
                     </label>
 
 
-                    <div style={{maxWidth: '300px', display: "flex", flexDirection: "row", alignItems: "center"}}>
+                <div style={{maxWidth: '300px', display: "flex", flexDirection: "row", alignItems: "center"}}>
 
-                        <InputOutlinedM3 labelText="weeks"
-                                         name="weeks"
-                                         type={"number"}
-                                         style={{textAlign: "center", "-webkit-appearance": "none"}}
-                                         defaultValue={state.weeks}
-                                         value={state.weeks}
-                                         step={1}
-                                         onChange={(e: any) => {
-                                             setState((prevState) => {
-                                                 return {
-                                                     ...prevState,
-                                                     weeks: e.target.value,
-                                                 }
-                                             })
-                                         }}
-                                         autofocus={true}
-                        />
-                        <div>X</div>
+                    <InputOutlinedM3 labelText="weeks"
+                                     name="weeks"
+                                     type={"number"}
+                                     style={{textAlign: "center", "-webkit-appearance": "none"}}
+                                     defaultValue={state.weeks}
+                                     value={state.weeks}
+                                     step={1}
+                                     onChange={(e: any) => {
+                                         setState((prevState) => {
+                                             return {
+                                                 ...prevState,
+                                                 weeks: e.target.value,
+                                             }
+                                         })
+                                     }}
+                                     autofocus={true}
+                    />
 
-                        <InputOutlinedM3 labelText="per 1"
-                                         name="perWeek"
-                                         type={"number"}
-                                         style={{textAlign: "center", "-webkit-appearance": "none"}}
-                                         value={state.perWeek}
-                                         step={1}
-                                         onChange={(e: any) => {
-                                             setState((prevState) => {
-                                                 return {
-                                                     ...prevState,
-                                                     perWeek: e.target.value,
-                                                 }
-                                             })
-                                         }}
-
-                        />
-
-                        <div>=</div>
-
-                        <InputOutlinedM3 labelText="Total"
-                                         name="totalCalculated"
-                                         type={"number"}
-                                         style={{
-                                             textAlign: "center",
-                                             "-webkit-inner-spin-button": "appearance-none",
-                                             MozAppearance: "textfield",
-                                         }}
-                                         disabled
-                                         value={state.totalSum}
-                        />
-
-                    </div>
+                    <button className="mdc-icon-button material-icons"
+                            style={{fontSize:"18px",padding:"4px"}}
+                    >
+                        <div className="mdc-icon-button__ripple"></div>
+                        close
+                    </button>
 
 
-                    <div className="button-container">
+                    <InputOutlinedM3 labelText="per 1"
+                                     name="perWeek"
+                                     type={"number"}
+                                     style={{textAlign: "center", "-webkit-appearance": "none"}}
+                                     value={state.perWeek}
+                                     step={1}
+                                     onChange={(e: any) => {
+                                         setState((prevState) => {
+                                             return {
+                                                 ...prevState,
+                                                 perWeek: e.target.value,
+                                             }
+                                         })
+                                     }}
 
-                        <button type="button" className="mdc-button cancel">
+                    />
+
+                    <div style={{padding:"8px"}}>=</div>
+
+                    <InputOutlinedM3 labelText="Total"
+                                     name="totalCalculated"
+                                     type={"number"}
+                                     style={{
+                                         textAlign: "center",
+                                         "-webkit-inner-spin-button": "appearance-none",
+                                         MozAppearance: "textfield",
+                                     }}
+                                     disabled
+                                     value={state.totalSum}
+                    />
+
+                </div>
+
+
+                <div className="button-container">
+
+                    <button type="button" className="mdc-button cancel">
                             <div className="mdc-button__ripple"></div>
                             <span className="mdc-button__label">
                   Cancel
