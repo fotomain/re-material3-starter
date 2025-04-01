@@ -7,6 +7,7 @@ import React from 'react';
 import CalculateMassagesForm from "./CalculateMassagesForm";
 
 import InitMaterial3 from "./lib/InitMaterial3";
+import CardM3 from "./CardM3";
 
 
 // Find all widget divs
@@ -21,6 +22,12 @@ if(container){
         root.render(
             <React.StrictMode>
                 <InitMaterial3/>
+                <div
+                    style={{ justifyContent:'center',display: "flex", flexDirection: "row", alignItems: "center"}}
+                >
+                    <CardM3 />
+                </div>
+
                 <CalculateMassagesForm symbol={div.dataset.symbol}/>
                 {/*<UserPasswordPincodeForm symbol={div.dataset.symbol}/>*/}
                 {/*()=>{return( <div key={ii}>{div}</div> )}*/}

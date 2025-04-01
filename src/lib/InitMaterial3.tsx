@@ -1,7 +1,24 @@
-import React from "react";
-import {RunDivPlugin} from "../CalculateMassagesForm";
 
-const InitMaterial3 = () => {
+import React from "react";
+
+import {colorSetText0} from "./colorSetText0";
+
+export const colorSet:any = {}
+const colorSetText:any=colorSetText0;
+let colorSetArray = colorSetText.split(';');
+for (let i = 0; i < colorSetArray.length; i++) {
+    let el = colorSetArray[i]
+    el = el.replace(/\n/g, '')
+    el = el.split(": ")
+    el[0] = el[0].replaceAll(" ", '')
+    el[0] = el[0].replaceAll("--md-sys-color", '--mdc-theme')
+    colorSetArray[i]= {[el[0]]: el[1]}
+    colorSet[el[0]]=el[1]
+}
+
+const InitMaterial3 = (props:any) => {
+
+
     return (
         <>
 
@@ -12,6 +29,7 @@ const InitMaterial3 = () => {
             {/*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>*/}
 
             {/*<link type="text/html" href="./css1/light.css" rel="stylesheet"/>*/}
+
         </>
     )
 }

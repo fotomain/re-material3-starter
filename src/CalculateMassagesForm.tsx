@@ -182,10 +182,13 @@ const CalculateMassagesForm = (props:any) => {
             >
 
                 <div
-                    className={"mdc-card mdc-card--outlined adopt-a-pup-card"}
+                    className={"mdc-card mdc-card--outlined"}
                     style={{
                         borderTopLeftRadius:"16px",
                         borderTopRightRadius:"16px",
+                    }}
+                    onClick={()=>{
+                        window.alert("Card1")
                     }}
                 >
 
@@ -209,7 +212,7 @@ const CalculateMassagesForm = (props:any) => {
                              style={{paddingLeft: "8px", paddingRight: "8px"}}
                         >
                             <div style={{fontWeight: "lighter"}} className="mdc-typography--headline4">
-                                You can specify Variant!
+                                You can specify!
                             </div>
                             <div className="mdc-typography--headline6">spin up to 4 gap:</div>
                             <div className="mdc-typography--headline6">spin up to 5 per week</div>
