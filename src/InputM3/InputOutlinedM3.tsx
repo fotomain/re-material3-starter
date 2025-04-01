@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {MDCTextField} from "@material/textfield";
-import uuid4_custom from "./lib/uuid4_custom";
+import uuid4_custom from "../lib/uuid4_custom";
 
-import '../src/lib/css1/light.css'
+import '../lib/css1/light.css'
 
 import {MDCFloatingLabel} from '@material/floating-label';
 

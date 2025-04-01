@@ -7,7 +7,7 @@ import React from 'react';
 import CalculateMassagesForm from "./CalculateMassagesForm";
 
 import InitMaterial3 from "./lib/InitMaterial3";
-import CardM3 from "./CardM3";
+import CardM3 from "./CardM3/CardM3";
 
 
 // Find all widget divs
@@ -28,7 +28,7 @@ if(container){
                     <CardM3 />
                 </div>
 
-                <CalculateMassagesForm symbol={div.dataset.symbol}/>
+                {/*<CalculateMassagesForm symbol={div.dataset.symbol}/>*/}
                 {/*<UserPasswordPincodeForm symbol={div.dataset.symbol}/>*/}
                 {/*()=>{return( <div key={ii}>{div}</div> )}*/}
             </React.StrictMode>

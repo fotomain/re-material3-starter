@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 
 // @ts-ignore
-import drawerImage from "./image1.jpg";
-import {colorSet} from "./lib/InitMaterial3";
+import drawerImage from "../image1.jpg";
+import {colorSet} from "../lib/InitMaterial3";
+import CardContentSpecify from "./CardContentSpecify";
+import CheckBoxM3 from "../InputM3/CheckBoxM3";
+import InputStandardt from "../InputM3/InputStandardt";
 
 const CardM3 = (props:any) => {
 
@@ -31,12 +34,13 @@ const CardM3 = (props:any) => {
                  borderTopRightRadius: "16px",
              }}
              onClick={() => {
-                 window.alert("Card1")
+                 // window.alert("Card1")
              }}
         >
 
             <div className="mdc-card__media mdc-card__media--16-9"
                  style={{
+                     position:"relative",
                      borderTopLeftRadius: "16px",
                      borderTopRightRadius: "16px",
                      backgroundImage: `url(${drawerImage})`,
@@ -44,58 +48,28 @@ const CardM3 = (props:any) => {
                      height: 'auto',
                  }}
             >
-            </div>
-
-            <div className="mdc-form-field"
-                // style={{backgroundColor:"red"}}
-            >
-                <div className="mdc-checkbox">
-                    <input type="checkbox"
-                           className="mdc-checkbox__native-control"
-                           id="checkbox1"
-                           checked={state.checkedAgree}
-                           onClick={(e) => {
-                               e.stopPropagation();
-                           }}
-                           onChange={(e: any) => {
-
-                               console.log("checkbox1", e.target.checked);
-                               setState((prevState) => {
-                                   return {
-                                       ...prevState,
-                                       checkedAgree: e.target.checked,
-                                   }
-                               })
-                           }}
-
-                    />
-                    <div className="mdc-checkbox__background"
-                         style={{
-                             // backgroundColor:"var(--mdc-theme-color-primary)"
-                         }}
-                    >
-                        <svg className="mdc-checkbox__checkmark"
-                             viewBox="0 0 24 24">
-                            <path className="mdc-checkbox__checkmark-path"
-                                  fill="none"
-                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                        </svg>
-                        <div className="mdc-checkbox__mixedmark"></div>
-                    </div>
-                </div>
-                <label htmlFor="checkbox1"
-                       style={{
-                           verticalAlign: "text-top",
-                           // backgroundColor:"white",
-                           fontSize: "18px",
-                       }}
-                       onClick={(e) => {
-                           e.stopPropagation()
-                       }}
+                <div
+                    style={{
+                        top:0,
+                        position:"absolute",
+                        paddingLeft: "8px", paddingRight: "8px"
+                    }}
                 >
-                    I am agree to sevice terms
-                </label>
+                    <CardContentSpecify/>
+                </div>
+
             </div>
+
+            <div
+                style={{marginTop:"12px",gap:"12px",display:"flex", flexDirection:"column", alignItems:"start"}}
+            >
+                <InputStandardt label={"Username"}/>
+
+                <InputStandardt label={"Phone number"}/>
+
+                <CheckBoxM3 state={state} setState={setState}/>
+            </div>
+
         </div>
         {/*checkbox*/}
 

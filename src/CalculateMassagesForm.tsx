@@ -18,7 +18,7 @@ import {MDCCheckbox} from '@material/checkbox';
 import {MDCRipple} from '@material/ripple';
 import {MDCTextField} from '@material/textfield';
 import {createRoot} from 'react-dom/client';
-import InputOutlinedM3 from "./InputOutlinedM3";
+import InputOutlinedM3 from "./InputM3/InputOutlinedM3";
 
 
 const CalculateMassagesForm = (props:any) => {
